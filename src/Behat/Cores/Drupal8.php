@@ -357,7 +357,7 @@ class Drupal8 extends OriginalDrupal8 implements CoreInterface {
     $controller = \Drupal::entityTypeManager()->getStorage($entity_type);
 
     if ($reset_cache) {
-      $controller->resetCache([$entity_id]);
+      $controller->resetCache();
     }
 
     $entity = $controller->load($entity_id);
@@ -372,7 +372,7 @@ class Drupal8 extends OriginalDrupal8 implements CoreInterface {
     $entities = $controller->loadMultiple($entities_ids);
 
     if ($reset_cache) {
-      $controller->resetCache($entities_ids);
+      $controller->resetCache();
     }
 
     $controller->delete($entities);
